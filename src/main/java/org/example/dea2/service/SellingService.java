@@ -1,8 +1,14 @@
 package org.example.dea2.service;
 
 import org.example.dea2.dto.request.SellingAddApiRequest;
-import org.example.dea2.dto.response.SellingAddApiResponse;
+import org.example.dea2.dto.response.ApiResponse;
 
 public interface SellingService {
-    SellingAddApiResponse add(SellingAddApiRequest request);
+    ApiResponse add(SellingAddApiRequest request);
+
+    ApiResponse get();
+
+    ApiResponse delete(String vehicleId);
+
+    ApiResponse update(SellingAddApiRequest request);
 }

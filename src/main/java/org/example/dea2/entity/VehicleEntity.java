@@ -1,19 +1,15 @@
 package org.example.dea2.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.math.BigDecimal;
-import java.nio.file.Path;
 import java.time.LocalDate;
 
 @Data
 @Entity
 
-public class SellingAddEntity {
+public class VehicleEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int sellingAddId;
@@ -24,5 +20,9 @@ public class SellingAddEntity {
     private BigDecimal bidAmount;
     private String imagePath;
     private String description;
-    private int userId;
+
+    @ManyToOne
+    @JoinColumn(name = "id")
+    private UserDetailsEntity user;
+
 }

@@ -7,12 +7,13 @@ import java.time.LocalDate;
 
 @Data
 public class SellingAddApiRequest {
+    private int vehicleId;
     private String vehicleName;
     private String year;
     private LocalDate startDate;
     private LocalDate endDate;
     private BigDecimal bidAmount;
-    private Byte image;
+    private String imagePath;
     private String description;
     private int userId;
 }

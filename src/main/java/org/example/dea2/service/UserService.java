@@ -2,11 +2,10 @@ package org.example.dea2.service;
 
 import org.example.dea2.dto.request.LoginApiRequest;
 import org.example.dea2.dto.request.SignUpApiRequest;
-import org.example.dea2.dto.response.LoginApiResponse;
-import org.example.dea2.dto.response.SignUpApiResponse;
+import org.example.dea2.dto.response.ApiResponse;
 
 public interface UserService {
-    SignUpApiResponse userSignUp(SignUpApiRequest request);
+    ApiResponse userSignUp(SignUpApiRequest request);
 
-    LoginApiResponse userLogin(LoginApiRequest request);
+    ApiResponse userLogin(LoginApiRequest request);
 }

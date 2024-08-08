@@ -2,8 +2,7 @@ package org.example.dea2.service.serviceImpl;
 
 import org.example.dea2.dto.request.LoginApiRequest;
 import org.example.dea2.dto.request.SignUpApiRequest;
-import org.example.dea2.dto.response.LoginApiResponse;
-import org.example.dea2.dto.response.SignUpApiResponse;
+import org.example.dea2.dto.response.ApiResponse;
 import org.example.dea2.entity.UserDetailsEntity;
 import org.example.dea2.repository.UserRepository;
 import org.example.dea2.service.UserService;
@@ -20,8 +19,8 @@ public class UserServiceImpl implements UserService {
 
     private BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
     @Override
-    public SignUpApiResponse userSignUp(SignUpApiRequest request) {
-        SignUpApiResponse response = new SignUpApiResponse();
+    public ApiResponse userSignUp(SignUpApiRequest request) {
+        ApiResponse response = new ApiResponse();
         try{
             String encodedPassword = bCryptPasswordEncoder.encode(request.getPassword());
             UserDetailsEntity userSave=new UserDetailsEntity();
@@ -45,8 +44,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public LoginApiResponse userLogin(LoginApiRequest request) {
-        LoginApiResponse response = new LoginApiResponse();
+    public ApiResponse userLogin(LoginApiRequest request) {
+        ApiResponse response = new ApiResponse();
 
         try{
             UserDetailsEntity user= userRepository.findByEmail(request.getEmail());
